@@ -57,6 +57,7 @@ class List {
   }
 
   at(index, node = this.head) {
+    if (index >= this.size) return null
     if (index == 0) return node
 
     return this.at(index - 1, node.next)
@@ -140,3 +141,5 @@ class List {
     this.reload(this.head)
   }
 }
+
+module.exports = List
