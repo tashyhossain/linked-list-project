@@ -3,7 +3,7 @@ const List = require('./linkedList')
 const shopping = new List()
 
 test('remember to get milk', () => {
-  expect(shopping.contains('peanut butter')).toBe(false)
+  expect(shopping.contains('almond milk')).toBe(false)
   shopping.append('almond milk')
 })
 
@@ -27,6 +27,11 @@ test('get first and last item', () => {
   expect(shopping.tail).toStrictEqual({value: 'grapes', next: null})
 })
 
+test('count items', () => {
+  expect(shopping.size).toBe(5)
+})
+
 test('look out of bounds', () => {
   expect(shopping.insertAt('ice cream', 10)).toBeNull()
 })
+

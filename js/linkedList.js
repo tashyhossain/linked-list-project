@@ -36,8 +36,8 @@ class List {
     if (this.size == 0) {
       Object.assign(this.head, new Node(value))
     } else {
-      let tail = this.tail
-      tail.next = Object.assign({}, new Node(value))
+      let currentTail = this.tail
+      currentTail.next = Object.assign({}, new Node(value))
     }
 
     this.reload(this.head)
@@ -47,10 +47,10 @@ class List {
     if (this.size == 0) {
       this.append(value)
     } else {
-      let tail = this.head
+      let currentHead = this.head
 
       this.head = Object.assign({}, new Node(value))
-      this.head.next = tail
+      this.head.next = currentHead
     }
 
     this.reload(this.head)
@@ -66,7 +66,7 @@ class List {
   pop() {
     if (this.size == 0) return null
 
-    if (this.size > 2) {
+    if (this.size > 1) {
       let newTail = this.at(this.size - 2)
 
       newTail.next = null
@@ -134,8 +134,8 @@ class List {
 
       prev.next = next
     } else if (index == 0) {
-      let oldHead = this.head
-      this.head = oldHead.next
+      let currentHead = this.head
+      this.head = currentHead.next
     }
 
     this.reload(this.head)
