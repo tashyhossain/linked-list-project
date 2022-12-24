@@ -21,6 +21,7 @@ test('prioritize item', () => {
 })
 
 test('get first and last item', () => {
+  expect(shopping.head.value).toBe('peanut butter')
   shopping.append('grapes')
   shopping.prepend('tomatoes')
   expect(shopping.at(0).value).toBe('tomatoes')
