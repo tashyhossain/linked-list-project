@@ -32,6 +32,6 @@ test('count items', () => {
 })
 
 test('look out of bounds', () => {
-  expect(shopping.insertAt('ice cream', 10)).toBeNull()
+  expect(shopping.removeAt(10)).toBeNull()
 })
 

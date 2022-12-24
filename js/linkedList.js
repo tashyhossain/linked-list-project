@@ -126,7 +126,7 @@ class List {
 
   removeAt(index) {
     if (index >= this.size) return null
-    if (index == this.size - 1) this.pop()
+    if (index == this.size - 1) return this.pop()
 
     if (index > 0 && index < this.size) {
       let prev = this.at(index - 1)
